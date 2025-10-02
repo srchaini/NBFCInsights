@@ -24,7 +24,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd my_dash_app && python app.py"
+args = "uv run python app.py"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -35,5 +35,9 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 46475
+localPort = 45193
 externalPort = 3000
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "app:server"]

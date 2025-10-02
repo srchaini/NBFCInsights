@@ -1,8 +1,8 @@
 from dash import Input, Output, html
 import plotly.graph_objs as go
 import pandas as pd
-from utils.data_loader import generate_nbfc_data
-from utils.kpi_functions import get_branch_performance
+from my_dash_app.utils.data_loader import generate_nbfc_data
+from my_dash_app.utils.kpi_functions import get_branch_performance
 
 def register_callbacks(app):
     @app.callback(

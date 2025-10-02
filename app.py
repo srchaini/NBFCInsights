@@ -2,8 +2,8 @@ import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
-from layout import portfolio_layout, segmentation_layout, collections_layout, branch_layout, projections_layout
-from callbacks import portfolio_callbacks, segmentation_callbacks, collections_callbacks, branch_callbacks, projections_callbacks
+from my_dash_app.layout import portfolio_layout, segmentation_layout, collections_layout, branch_layout, projections_layout
+from my_dash_app.callbacks import portfolio_callbacks, segmentation_callbacks, collections_callbacks, branch_callbacks, projections_callbacks
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server  # <- This is required for Render
@@ -54,4 +54,4 @@ projections_callbacks.register_callbacks(app)
 #     app.run(host='0.0.0.0', port=5000, debug=True)
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

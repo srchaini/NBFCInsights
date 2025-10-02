@@ -1,6 +1,6 @@
 from dash import Input, Output
 import plotly.graph_objs as go
-from utils.data_loader import generate_nbfc_data
+from my_dash_app.utils.data_loader import generate_nbfc_data
 
 def register_callbacks(app):
     @app.callback(

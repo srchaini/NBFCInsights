@@ -1,7 +1,7 @@
 from dash import Input, Output
 import plotly.graph_objs as go
-from utils.data_loader import generate_time_series_data
-from utils.kpi_functions import format_currency
+from my_dash_app.utils.data_loader import generate_time_series_data
+from my_dash_app.utils.kpi_functions import format_currency
 
 def register_callbacks(app):
     @app.callback(

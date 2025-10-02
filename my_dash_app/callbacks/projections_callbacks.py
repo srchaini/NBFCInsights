@@ -3,7 +3,7 @@ import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from utils.data_loader import generate_time_series_data
+from my_dash_app.utils.data_loader import generate_time_series_data
 
 def register_callbacks(app):
     @app.callback(

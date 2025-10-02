@@ -6,6 +6,7 @@ from layout import portfolio_layout, segmentation_layout, collections_layout, br
 from callbacks import portfolio_callbacks, segmentation_callbacks, collections_callbacks, branch_callbacks, projections_callbacks
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server  # <- This is required for Render
 app.title = "NBFC Dashboard"
 
 app.layout = dbc.Container([
@@ -49,5 +50,8 @@ collections_callbacks.register_callbacks(app)
 branch_callbacks.register_callbacks(app)
 projections_callbacks.register_callbacks(app)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=True)
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
